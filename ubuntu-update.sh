@@ -1,11 +1,12 @@
 #!/bin/bash
 
-echo "*************************************************************************************"
-echo "*******************     SETUP DEVELOPMENT ENVIROMENT - UBUNTU     *******************"
-echo "*************************************************************************************"
+echo "*******************     SETUP DEVELOPMENT ENVIROMENT - UBUNTU     *******************";
+sudo apt update
+sudo apt upgrade
 
 # Incluir repositórios em /etc/apt/sources.list
-# Google Chrome: deb http://dl.google.com/linux/deb/ stable main
+sudo echo "# Google Repository" >> /etc/apt/sources.list
+sudo echo "deb http://dl.google.com/linux/deb/ stable main" >> /etc/apt/sources.list
 
 # Criar chaves
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -15,26 +16,43 @@ sudo apt update
 sudo apt upgrade
 
 # Remoção de Aplicações não utilizadas
-sudo apt-get purge openjdk*
-sudo apt autoremove --purge rhythmbox* thunderbird*
+sudo apt autoremove --purge openjdk* rhythmbox* thunderbird*
 
-# Aplicações Básicas
-sudo apt install gnome-tweak-tool
-sudo apt install vlc
-sudo apt install clementine
-sudo apt install ubuntu-restricted-extras
-sudo apt install brasero
-sudo apt install cdrdao
-sudo apt install usb-creator-gtk
-sudo apt install gimp
-sudo apt install inkscape
-sudo apt install shotwell
-sudo apt install ttf-mscorefonts-installer
-sudo apt-get install google-chrome-stable
+sudo apt update
+
+# Minhas Aplicações
+sudo apt install -y ubuntu-restricted-extras
+sudo apt install -y gnome-tweak-tool
+sudo apt install -y vlc
+sudo apt install -y clementine
+sudo apt install -y brasero
+sudo apt install -y cdrdao
+sudo apt install -y usb-creator-gtk
+sudo apt install -y gimp
+sudo apt install -y inkscape
+sudo apt install -y shotwell
+sudo apt install -y ttf-mscorefonts-installer
+sudo apt install -y google-chrome-stable
+
+# Aplicações de Desenvolvimento
+sudo apt install -y git
+sudo apt install -y zsh
+chsh -s $(which zsh)
+
 
 sudo snap install --classic skype
 sudo snap install spotify
 
+# Criar ambiente de desenvolvimento
+mkdir -p ~/desenv/java
+mkdir -p ~/desenv/cabonnet
+mkdir -p ~/desenv/escolpi
+mkdir -p ~/desenv/rhf
+mkdir -p ~/desenv/escolpi
+
 # Aplicações de desenvolvimento
-sudo apt install git
-sudo apt install zsh
+
+
+echo "Instalação finalizada com sucesso! Tenha um bom dia ;-)"
+echo "*************************************************************************************"
+exit 1

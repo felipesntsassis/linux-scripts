@@ -23,6 +23,7 @@ sudo apt install -y gimp gimp-plugin-registry gimp-data-extras
 sudo apt install -y inkscape
 sudo apt install -y shotwell
 sudo apt install -y ttf-mscorefonts-installer
+sudo apt install -y fatsort
 
 # Aplicações de Desenvolvimento
 sudo apt install -y git

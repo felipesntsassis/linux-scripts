@@ -23,11 +23,10 @@ sudo apt install -y gimp gimp-plugin-registry gimp-data-extras
 sudo apt install -y inkscape
 sudo apt install -y shotwell
 sudo apt install -y ttf-mscorefonts-installer
+sudo apt install -y fonts-firacode
 sudo apt install -y network-tools
 sudo apt install -y openssh-server
 
-# Aplicações de Desenvolvimento
-sudo apt install -y git
 sudo apt install -y tilix
 # Configurar o Tilix como terminal padrão
 sudo update-alternatives --config x-terminal-emulator
@@ -41,8 +40,7 @@ sudo snap install --classic skype
 sudo snap install spotify
 
 # Criar ambiente de desenvolvimento
-mkdir -p ~/desenv/projetos/cabonnet
-mkdir -p ~/desenv/projetos/escolpi
+mkdir -p ~/desenv/projetos/pedidoagora
 mkdir -p ~/desenv/projetos/rhf
 
 git config --global user.name "Felipe dos Santos Assis"
